@@ -16,7 +16,7 @@
 
 
 [alias]
-  a = add
+  a = add -A
   b = branch
   co = checkout
   dt = difftool

@@ -1,0 +1,35 @@
+# Makes console in mac more sane.
+#
+# ln -s /path/here/inputrc ~/.inputrc
+
+set input-meta on
+set output-meta on
+set convert-meta off
+
+# To use these in ITerm2 you may also need to configure preferences to send the correct escape
+# code for the key combination.
+
+# Option + Arrows to jump words.
+"\e[1;5C": forward-word
+"\e[1;5D": backward-word
+
+
+# The following are other escape sequences that can be configured in Iterm2 preferences.
+#        ESC ^H   Delete previous word (backspace key) [n]
+#        ESC DEL  Delete previous word (delete key) [n]
+#        ESC SP   Set the mark (space key); see ^X^X and ^Y above
+#        ESC .    Get the last (or [n]'th) word from previous line
+#        ESC ?    Show possible completions; see below
+#        ESC <    Move to start of history
+#        ESC >    Move to end of history
+#        ESC b    Move backward a word [n]
+#        ESC d    Delete word under cursor [n]
+#        ESC f    Move forward a word [n]
+#        ESC l    Make word lowercase [n]
+#        ESC u    Make word uppercase [n]
+#        ESC y    Yank back last killed text
+#        ESC v    Show library version
+#        ESC w    Make area up to mark yankable
+#        ESC nn   Set repeat count to the number nn
+#        ESC C    Read from environment variable ``_C_'', where C is
+#                 an uppercase letter
