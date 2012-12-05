@@ -1,0 +1,87 @@
+# Common git settings.
+#
+# Update ~/.gitconfig to look something like this:
+
+# [user]
+#   name = [name]
+#   email = [email]
+#
+# [github]
+#   user = [username]
+#   token = [token]
+#
+# [include]
+#   path = /path/to/this/file/gitconfig
+#
+
+
+[alias]
+  a = add
+  b = branch
+  co = checkout
+  dt = difftool
+  mt = mergetool
+  st = status
+  sh = stash
+
+  # How big is your change?  e.g. git stat master --cached
+  stat = diff --stat
+
+  # Various shortcuts for committing.
+  c = commit
+  ca = commit -a
+  cm = commit -m
+  cam = commit -a -m
+
+  amend = commit -a --amend
+  prune = remote update --prune
+
+  # Create a new branch from freshly updated master.
+  start = !git checkout master && git pull origin master && git checkout -b
+
+  # Rebase help.
+  rb = rebase
+  continue = !git add -A && git rebase --continue
+  abort = rebase --abort
+
+  # List my local and remote branches
+  branches = !git branch -a | grep pupius
+
+  # Send out a pull-request (requires separate script)
+  pr = pull-request
+
+[color]
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+
+[format]
+  pretty = oneline
+
+[push]
+  default = current
+
+[branch "master"]
+  rebase = true
+
+[rerere]
+  enabled = true
+
+[difftool]
+  prompt = false
+
+[mergetool]
+  prompt = false
+
+[diff]
+  tool = Kaleidoscope
+
+[merge]
+  tool = Kaleidoscope
+
+[difftool "Kaleidoscope"]
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+
+[mergetool "Kaleidoscope"]
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
