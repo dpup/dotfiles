@@ -34,7 +34,9 @@
   cam = commit -a -m
 
   amend = commit -a --amend
-  prune = remote update --prune
+
+  # Prune a remote
+  proon = remote update --prune
 
   # Create a new branch from freshly updated master.
   start = !git checkout master && git pull origin master && git checkout -b
