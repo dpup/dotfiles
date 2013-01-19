@@ -33,9 +33,13 @@
   cm = commit -m
   cam = commit -a -m
 
+  # Git logs.
+  graph = log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"
+
+  # Amend previous commit with all changes in the workspace.
   amend = commit -a --amend
 
-  # Prune a remote
+  # Prune remotes.
   proon = remote update --prune
 
   # Create a new branch from freshly updated master.
@@ -59,7 +63,7 @@
   status = auto
 
 [format]
-  pretty = oneline
+  pretty = format:%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
 
 [push]
   default = current
@@ -70,20 +74,20 @@
 [rerere]
   enabled = true
 
-[difftool]
-  prompt = false
+#[difftool]
+#  prompt = false
 
-[mergetool]
-  prompt = false
+#[mergetool]
+#  prompt = false
 
-[diff]
-  tool = Kaleidoscope
-
-[merge]
-  tool = Kaleidoscope
-
-[difftool "Kaleidoscope"]
-  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-
-[mergetool "Kaleidoscope"]
-  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
+#[diff]
+#  tool = Kaleidoscope
+#
+#[merge]
+#  tool = Kaleidoscope
+#
+#[difftool "Kaleidoscope"]
+#  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+#
+#[mergetool "Kaleidoscope"]
+#  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
