@@ -1,5 +1,5 @@
 
-alias l='ls -lh`'
+alias l='ls -lh'
 alias la='ls -A'
 alias ll='ls -CF'
 alias lf='ls -Gl | grep ^d' # Only list directories
