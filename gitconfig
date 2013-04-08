@@ -43,18 +43,29 @@
   proon = remote update --prune
 
   # Create a new branch from freshly updated master.
-  start = !git checkout master && git pull origin master && git checkout -b
+  # start = !git checkout master && git pull origin master && git checkout -b
 
   # Rebase help.
   rb = rebase
   continue = !git add -A && git rebase --continue
   abort = rebase --abort
 
-  # List my local and remote branches
-  branches = !git branch -a | grep pupius
+  # List my local and remote branches (ignoring stderr about bad refs etc.)
+  branches = !git branch -avv --color=always 2>/dev/null | grep dpup
 
   # Send out a pull-request (requires separate script)
   pr = pull-request
+
+  # Stashes modified files, runs git sync, pops stash (requires git-sync script)
+  stash-sync = !git stash && git sync && git stash pop
+
+  # Flag a file to not be included in commits, e.g. config files.
+  assume   = update-index --assume-unchanged
+  unassume = update-index --no-assume-unchanged
+  assumed  = "!git ls-files -v | grep ^h | cut -c 3-"
+
+  # Stashes current changes without reverting them.
+  snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
 
 [color]
   branch = auto
