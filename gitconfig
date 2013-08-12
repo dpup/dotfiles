@@ -24,6 +24,9 @@
   st = status -sb
   sh = stash
 
+  # Short grep command that groups results by file and shows line numbers
+  g = grep --break --heading --line-number --color
+
   # How big is your change?  e.g. git stat master --cached
   stat = diff --stat
 
