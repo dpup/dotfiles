@@ -70,6 +70,9 @@
   # Stashes current changes without reverting them.
   snapshot = !git stash save "snapshot: $(date)" && git stash apply "stash@{0}"
 
+  # Assumes TODOs are in the form `TODO(dan):`
+  todo = !git grep -n TODO\\($USER\\) | cut -d':' -f1,2,4
+
 [color]
   branch = auto
   diff = auto
