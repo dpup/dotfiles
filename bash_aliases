@@ -5,6 +5,8 @@ alias ll='ls -CF'
 alias lf='ls -Gl | grep ^d' # Only list directories
 alias lr='tree -Ca'
 
+alias serve='python -m SimpleHTTPServer 8080'
+
 alias e-bash='vim ~/.bashrc; source ~/.bashrc'
 alias e-aliases='vim ~/.bash_aliases; source ~/.bashrc'
 

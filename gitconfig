@@ -16,7 +16,7 @@
 
 
 [alias]
-  a = add -A
+  a = add --all .
   b = branch
   co = checkout
   dt = difftool
@@ -40,7 +40,7 @@
   graph = log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s"
 
   # Amend previous commit with all changes in the workspace.
-  amend = commit -a --amend
+  amend = commit -a --amend --no-edit
 
   # Prune remotes.
   proon = remote update --prune
@@ -72,6 +72,12 @@
 
   # Assumes TODOs are in the form `TODO(dan):`
   todo = !git grep -n TODO\\($USER\\) | cut -d':' -f1,2,4
+
+  # Branches from the current branch, naming the new branch with the suffux "-next"
+  next = !git co -b "$(git branch-name)-next"
+
+  # Prints the current branch name without parens like __git_ps1.
+  branch-name = !git for-each-ref --format='%(refname:short)' `git symbolic-ref HEAD`
 
 [color]
   branch = auto
