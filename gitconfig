@@ -79,6 +79,8 @@
   # Prints the current branch name without parens like __git_ps1.
   branch-name = !git for-each-ref --format='%(refname:short)' `git symbolic-ref HEAD`
 
+  changed = diff --name-only master
+
 [color]
   branch = auto
   diff = auto

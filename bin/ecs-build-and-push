@@ -1,0 +1,27 @@
+#!/bin/bash
+#set -o xtrace
+
+$(aws ecr get-login --profile=home)
+
+now=$(date "+%Y.%m.%d")
+commit=$(git rev-parse --verify --short HEAD)
+
+tag="${now}-${commit}"
+name="$(cat ECR_NAME)"
+url="$(cat ECR_URL)"
+
+docker build -t ${name} . && \
+docker tag ${name}:latest ${name}:${tag} && \
+docker tag ${name}:latest ${url}/${name}:${tag} && \
+docker tag ${name}:latest ${url}/${name}:latest && \
+docker push ${url}/${name}:${tag} && \
+docker push ${url}/${name}:latest
+
+echo "Built and pushed ${name}:${tag}"
+
+if [ -f ECS_TASK_DEF ]; then
+  json=$(cat ECS_TASK_DEF)
+  json=${json//LATEST_TAG/$tag}
+  taskArn=$(aws --profile=home ecs register-task-definition --cli-input-json "$json" | json taskDefinition.taskDefinitionArn)
+  echo "New task definition: $taskArn"
+fi
