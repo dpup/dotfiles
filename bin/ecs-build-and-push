@@ -1,7 +1,7 @@
 #!/bin/bash
 set -o xtrace
 
-$(aws ecr get-login --profile=home)
+$(aws ecr get-login --profile=home --region=us-east-1)
 
 now=$(date "+%Y.%m.%d")
 commit=$(git rev-parse --verify --short HEAD)
@@ -27,12 +27,12 @@ echo "Built and pushed ${name}:${tag}"
 if [ -f ECS_TASK_DEF ]; then
   json=$(cat ECS_TASK_DEF)
   json=${json//LATEST_TAG/$tag}
-  taskArn=$(aws --profile=home ecs register-task-definition --cli-input-json "$json" | json taskDefinition.taskDefinitionArn)
+  taskArn=$(aws --profile=home ecs register-task-definition --region=us-east-1 --cli-input-json "$json" | jq --raw-output '.taskDefinition.taskDefinitionArn')
   echo "New task definition: $taskArn"
 
   if [[ "$1" == 'deploy' ]]; then
     echo "Updating service definition"
-    result=$(aws --profile=home ecs update-service --cluster=sites --service=$name --task-definition=$taskArn)
+    result=$(aws --profile=home ecs update-service --cluster=sites --region=us-east-1 --service=$name --task-definition=$taskArn)
     if [[ "$?" != '0' ]]; then
       echo "Error deploying image: $result"
       exit 1
