@@ -45,9 +45,6 @@
   # Prune remotes.
   proon = remote update --prune
 
-  # Create a new branch from freshly updated master.
-  # start = !git checkout master && git pull origin master && git checkout -b
-
   # Rebase help.
   rb = rebase
   continue = !git add -A && git rebase --continue
@@ -55,6 +52,9 @@
 
   # List my local and remote branches (ignoring stderr about bad refs etc.)
   branches = !git branch -avv --color=always 2>/dev/null | grep dpup
+
+  # Remove branches that have already been merged.
+  cleanup = !git branch --merged | grep -v master | grep -v '*' | xargs git branch -d
 
   # Send out a pull-request (requires separate script)
   pr = pull-request
@@ -79,7 +79,11 @@
   # Prints the current branch name without parens like __git_ps1.
   branch-name = !git for-each-ref --format='%(refname:short)' `git symbolic-ref HEAD`
 
+  # Show files that are different than master.
   changed = diff --name-only master
+
+  # Show all files that are not being tracked by git.
+  ignored = ls-files --others -i --exclude-standard
 
 [color]
   branch = auto
