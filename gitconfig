@@ -54,7 +54,7 @@
   branches = !git branch -avv --color=always 2>/dev/null | grep dpup
 
   # Remove branches that have already been merged.
-  cleanup = !git branch --merged | grep -v master | grep -v '*' | xargs git branch -d
+  #cleanup = !git branch --merged | grep -v master | grep -v '*' | xargs git branch -d
 
   # Send out a pull-request (requires separate script)
   pr = pull-request
@@ -72,6 +72,9 @@
 
   # Assumes TODOs are in the form `TODO(dan):`
   todo = !git grep -n TODO\\($USER\\) | cut -d':' -f1,2,4
+
+  # Finds all todos.
+  todox = !git grep -n TODO | cut -d':' -f1,2,4
 
   # Branches from the current branch, naming the new branch with the suffux "-next"
   next = !git co -b "$(git branch-name)-next"
