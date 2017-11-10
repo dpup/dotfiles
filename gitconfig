@@ -14,6 +14,26 @@
 #   path = /path/to/this/file/gitconfig
 #
 
+[color]
+  branch = auto
+  diff = auto
+  interactive = auto
+  status = auto
+
+[format]
+  pretty = format:%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
+
+[push]
+  default = current
+
+[branch "master"]
+  rebase = true
+
+[rerere]
+  enabled = true
+
+[core]
+  editor = subl -n -w
 
 [alias]
   a = add --all .
@@ -87,21 +107,3 @@
 
   # Show all files that are not being tracked by git.
   ignored = ls-files --others -i --exclude-standard
-
-[color]
-  branch = auto
-  diff = auto
-  interactive = auto
-  status = auto
-
-[format]
-  pretty = format:%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset
-
-[push]
-  default = current
-
-[branch "master"]
-  rebase = true
-
-[rerere]
-  enabled = true

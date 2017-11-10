@@ -1,4 +1,7 @@
-# don't put duplicate lines in the history. See bash(1) for more options
+# If not running interactively, don't do anything
+[ -z "$PS1" ] && return
+
+# Don't put duplicate lines in the history. See bash(1) for more options
 export HISTCONTROL=ignoredups
 export HISTFILESIZE=1000000000
 export HISTSIZE=1000000
@@ -7,6 +10,7 @@ shopt -s cmdhist
 shopt -s histappend
 
 export GIT_EDITOR='subl -n -w'
+export EDITOR=subl
 
 RESET="\[\017\]"
 NORMAL="\[\e[0m\]"
@@ -19,9 +23,21 @@ source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.
 # Set the prompt to "user@host working/directory $" but with nice colors.
 export PS1="$YELLOW\u@\h: $WHITE\w$NORMAL\$(__git_ps1) $RED\$ $NORMAL$RESET"
 
-# Show Git branch name and working directory in terminal's title.
-# function path_title() {
-#   echo -en "\\033];$(__git_ps1) - `pwd`\\007"
-# }
-# PROMPT_COMMAND=path_title
+# make less more friendly for non-text input files, see lesspipe(1)
+[ -x /usr/bin/lesspipe ] && eval "$(lesspipe)"
 
+# Check the window size after each command and, if necessary,
+# update the values of LINES and COLUMNS.
+shopt -s checkwinsize
+
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
+
+if [ -f /usr/local/git/contrib/completion/git-completion.bash ]; then
+    . /usr/local/git/contrib/completion/git-completion.bash
+fi
+
+if [ -f ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
