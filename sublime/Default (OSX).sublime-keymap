@@ -1,0 +1,16 @@
+[
+  {
+    "keys": [
+      "super+s"
+    ],
+    "command": "gs_fmt_save",
+    "context": [
+      {
+        "key": "selector",
+        "operator": "equal",
+        "operand": "text.go"
+      }
+    ]
+  },
+  { "keys": ["command+shift+r"], "command": "reveal_in_side_bar"}
+]

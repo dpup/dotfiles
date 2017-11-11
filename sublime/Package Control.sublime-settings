@@ -1,0 +1,22 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Babel",
+		"Dockerfile Syntax Highlighting",
+		"GoImports",
+		"Golang Tools Integration",
+		"GoSublime",
+		"JsPrettier",
+		"Markdown Preview",
+		"Package Control",
+		"PackageSync",
+		"Pretty JSON",
+		"Protobuf Syntax Hightlighting",
+		"Sass",
+		"Terraform"
+	]
+}
