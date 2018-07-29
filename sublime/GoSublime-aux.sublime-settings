@@ -4,7 +4,14 @@
 		"clear",
 		"go list"
 	],
-	"ann": "a17.10.15-1",
-	"install_version": "r17.10.15-1",
-	"version": "r17.10.15-1"
+	"9o.hist./Users/pupius/Projects/mono/go/src/services/index/indexmodel":
+	[
+		"help",
+		"test *",
+		"go test *",
+		"go test"
+	],
+	"ann": "a18.05.19-1",
+	"install_version": "r18.05.19-1",
+	"version": "r18.05.19-1"
 }

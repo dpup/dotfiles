@@ -18,7 +18,7 @@ YELLOW="\[\e[0;33m\]"
 WHITE="\[\e[0;37m\]"
 RED="\[\e[0;31m\]"
 
-source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
+#source /Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-prompt.sh
 
 # Set the prompt to "user@host working/directory $" but with nice colors.
 export PS1="$YELLOW\u@\h: $WHITE\w$NORMAL\$(__git_ps1) $RED\$ $NORMAL$RESET"
@@ -34,10 +34,23 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-if [ -f /usr/local/git/contrib/completion/git-completion.bash ]; then
-    . /usr/local/git/contrib/completion/git-completion.bash
+if [ -f ~/.git-completion.bash ]; then
+    . ~/.git-completion.bash
+fi
+
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
+fi
+
+if [ -f `brew --prefix`/etc/bash_completion.d/git-completion.bash ]; then
+  . `brew --prefix`/etc/bash_completion.d/git-completion.bash
 fi
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+
+if [ -f /usr/local/bin/aws_completer ]; then
+  complete -C '/usr/local/bin/aws_completer' aws
+fi
+

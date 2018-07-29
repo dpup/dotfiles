@@ -10,13 +10,13 @@ alias serve='python -m SimpleHTTPServer 8080'
 alias e-bash='vim ~/.bashrc; source ~/.bashrc'
 alias e-aliases='vim ~/.bash_aliases; source ~/.bashrc'
 
-alias cdm='cd /Users/dan/Projects/medium2'
+alias cdm="cd /Users/$USER/Projects/mono"
 
 # Alias 'git', but still allow autocomplete
 alias g='git'
 complete -o default -o nospace -F _git g
 
-alias tm='ps aux | grep'
+alias tm='ps au | grep'
 
 alias back='cd -'
 

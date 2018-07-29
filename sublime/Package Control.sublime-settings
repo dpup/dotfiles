@@ -7,11 +7,12 @@
 	[
 		"Babel",
 		"Dockerfile Syntax Highlighting",
+		"Git",
 		"GoImports",
 		"Golang Tools Integration",
 		"GoSublime",
 		"JsPrettier",
-		"Markdown Preview",
+		"MarkdownPreview",
 		"Package Control",
 		"PackageSync",
 		"Pretty JSON",
