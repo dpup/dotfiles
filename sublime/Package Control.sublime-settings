@@ -5,6 +5,7 @@
 	],
 	"installed_packages":
 	[
+		"ayu",
 		"Babel",
 		"Dockerfile Syntax Highlighting",
 		"Git",
@@ -13,11 +14,15 @@
 		"GoSublime",
 		"JsPrettier",
 		"MarkdownPreview",
+		"Material Theme",
+		"Materialize",
 		"Package Control",
 		"PackageSync",
 		"Pretty JSON",
 		"Protobuf Syntax Hightlighting",
 		"Sass",
-		"Terraform"
+		"Solarized Color Scheme",
+		"Terraform",
+		"Theme - Soda SolarizedDark"
 	]
 }
