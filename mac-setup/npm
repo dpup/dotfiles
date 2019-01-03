@@ -1,0 +1,3 @@
+npm install -g draccus
+npm install -g gulp-cli
+npm install -g prettier

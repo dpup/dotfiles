@@ -1,4 +1,5 @@
 {
 	"fmt_cmd": ["goimports"],
+  "ipc_timeout": 30,
 	"autocomplete_builtins": true,
 }
