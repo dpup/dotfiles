@@ -54,3 +54,7 @@ if [ -f /usr/local/bin/aws_completer ]; then
   complete -C '/usr/local/bin/aws_completer' aws
 fi
 
+ssh-add -A
+
+# Personal dev stuff.
+export WORLD=devpupius

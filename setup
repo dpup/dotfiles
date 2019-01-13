@@ -1,0 +1,51 @@
+#!/bin/bash
+#
+# Steps, run from home directory:
+#
+# git clone https://github.com/dpup/dotfiles.git
+# cd ./dotfiles/
+# ./setup
+
+
+# Install homebrew and all the software.
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew update
+brew bundle install
+bash ./npm
+echo "> software installed"
+
+
+# Bootstrap gitconfig.
+cat > ~/.gitconfig <<EOF
+[user]
+  name = Dan Pupius
+  email = [email]
+
+[include]
+  path = $(pwd)/gitconfig
+EOF
+echo "> ~/.gitconfig needs an email address adding"
+
+
+# Default pash profile.
+cat > ~/.bash_profile <<EOF
+export PATH="/usr/local/opt/sqlite/bin:\$PATH"
+export PATH="/Users/pupius/Projects/git-workflow:\$PATH"
+export PATH="/Users/pupius/bin:\$PATH"
+export PATH="/usr/local/opt/go/libexec/bin:\$PATH"
+if [ -f ~/.bashrc ]; then
+   source ~/.bashrc
+fi
+EOF
+
+
+# Link config files.
+echo "source $(pwd)/bashrc" > ~/.bashrc
+ln -s $(pwd)/inputrc ~/.inputrc
+ln -s $(pwd)/bash_aliases ~/.bash_aliases
+source ~/.bashrc
+
+
+# Setup sublime.
+rm -r ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
+ln -s $(pwd)/sublime/ ln -s $(pwd)/sublime/ ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User

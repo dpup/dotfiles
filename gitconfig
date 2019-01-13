@@ -6,10 +6,6 @@
 #   name = [name]
 #   email = [email]
 #
-# [github]
-#   user = [username]
-#   token = [token]
-#
 # [include]
 #   path = /path/to/this/file/gitconfig
 #
@@ -28,6 +24,9 @@
 
 [branch "master"]
   rebase = true
+
+[merge]
+  tool = opendiff
 
 [rerere]
   enabled = true
