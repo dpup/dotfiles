@@ -11,7 +11,7 @@
 		"go test *",
 		"go test"
 	],
-	"ann": "a18.07.31-1",
-	"install_version": "r18.07.22-1",
-	"version": "r18.07.22-1"
+	"ann": "a18.11.28-1",
+	"install_version": "r18.11.28-1",
+	"version": "r18.11.28-1"
 }
