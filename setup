@@ -14,18 +14,18 @@ brew bundle install
 bash ./npm
 echo "> software installed"
 
+mkdir ~/Projects
 
-# Bootstrap gitconfig.
-cat > ~/.gitconfig <<EOF
-[user]
-  name = Dan Pupius
-  email = [email]
 
-[include]
-  path = $(pwd)/gitconfig
-EOF
-echo "> ~/.gitconfig needs an email address adding"
+# Setup sublime.
+rm -r ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
+ln -s $(pwd)/sublime/ ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
 
+# Link config files.
+echo "source $(pwd)/bashrc" > ~/.bashrc
+ln -s $(pwd)/inputrc ~/.inputrc
+ln -s $(pwd)/bash_aliases ~/.bash_aliases
+source ~/.bashrc
 
 # Default pash profile.
 cat > ~/.bash_profile <<EOF
@@ -38,14 +38,14 @@ if [ -f ~/.bashrc ]; then
 fi
 EOF
 
+# Bootstrap gitconfig.
+cat > ~/.gitconfig <<EOF
+[user]
+  name = Dan Pupius
+  email = [email]
 
-# Link config files.
-echo "source $(pwd)/bashrc" > ~/.bashrc
-ln -s $(pwd)/inputrc ~/.inputrc
-ln -s $(pwd)/bash_aliases ~/.bash_aliases
-source ~/.bashrc
-
-
-# Setup sublime.
-rm -r ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
-ln -s $(pwd)/sublime/ ln -s $(pwd)/sublime/ ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
+[include]
+  path = $(pwd)/gitconfig
+EOF
+echo "> ~/.gitconfig needs an email address adding"
+subl ~/.gitconfig
