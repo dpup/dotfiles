@@ -19,11 +19,13 @@
 		"Materialize",
 		"Package Control",
 		"PackageSync",
+		"Postgres PL pgSQL",
 		"Pretty JSON",
 		"Protobuf Syntax Hightlighting",
 		"Sass",
 		"Solarized Color Scheme",
 		"Terraform",
-		"Theme - Soda SolarizedDark"
+		"Theme - Soda SolarizedDark",
+		"URLEncode"
 	]
 }

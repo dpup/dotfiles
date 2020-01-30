@@ -9,6 +9,7 @@ export HISTTIMEFORMAT="%F %T "
 shopt -s cmdhist
 shopt -s histappend
 
+export GIT_OPTIONAL_LOCKS=0
 export GIT_EDITOR='subl -n -w'
 export EDITOR=subl
 

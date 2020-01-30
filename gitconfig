@@ -25,14 +25,29 @@
 [branch "master"]
   rebase = true
 
-[merge]
-  tool = opendiff
-
 [rerere]
   enabled = true
 
 [core]
   editor = subl -n -w
+
+[difftool "Kaleidoscope"]
+  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
+
+[difftool]
+  prompt = false
+
+[diff]
+  tool = Kaleidoscope
+
+[mergetool "Kaleidoscope"]
+  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" \"$REMOTE\"
+
+[mergetool]
+  prompt = false
+
+[merge]
+  tool = Kaleidoscope
 
 [alias]
   a = add --all .
