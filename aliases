@@ -1,0 +1,11 @@
+
+alias back='cd -'
+alias cdm="cd /Users/$USER/Projects/mono"
+alias g='git'
+alias l='ls -lh'
+alias la='ls -Al'
+alias lf='ls -Gl | grep ^d' # Only list directories
+alias ll='ls -CF'
+alias lr='tree -Ca'
+alias serve='python -m SimpleHTTPServer 8080'
+alias tm='ps au | grep'
