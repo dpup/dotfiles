@@ -1,0 +1,6 @@
+{
+	"binary": "/usr/local/bin/clang-format",
+	"style": "Google",
+  "format_on_save": true,
+  "languages": ["Protocol Buffers", "C", "C++", "C++11", "Objective-C", "Objective-C++"]
+}

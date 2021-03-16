@@ -22,7 +22,7 @@
 [push]
   default = current
 
-[branch "master"]
+[branch "main"]
   rebase = true
 
 [rerere]
@@ -61,7 +61,7 @@
   # Short grep command that groups results by file and shows line numbers
   g = grep --break --heading --line-number --color
 
-  # How big is your change?  e.g. git stat master --cached
+  # How big is your change?  e.g. git stat main --cached
   stat = diff --stat
 
   # Various shortcuts for committing.
@@ -88,7 +88,7 @@
   branches = !git branch -avv --color=always 2>/dev/null | grep dpup
 
   # Remove branches that have already been merged.
-  #cleanup = !git branch --merged | grep -v master | grep -v '*' | xargs git branch -d
+  #cleanup = !git branch --merged | grep -v main | grep -v '*' | xargs git branch -d
 
   # Send out a pull-request (requires separate script)
   pr = pull-request
@@ -116,8 +116,8 @@
   # Prints the current branch name without parens like __git_ps1.
   branch-name = !git for-each-ref --format='%(refname:short)' `git symbolic-ref HEAD`
 
-  # Show files that are different than master.
-  changed = diff --name-only master
+  # Show files that are different than main.
+  changed = diff --name-only main
 
   # Show all files that are not being tracked by git.
   ignored = ls-files --others -i --exclude-standard

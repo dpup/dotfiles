@@ -1,8 +1,6 @@
 #!/bin/bash
 set -o xtrace
 
-$(aws ecr get-login --no-include-email --profile=home --region=us-east-1)
-
 now=$(date "+%Y.%m.%d")
 commit=$(git rev-parse --verify --short HEAD)
 

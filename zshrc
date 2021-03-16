@@ -12,7 +12,7 @@ plugins=(
 	brew
 	docker
 	git
-	go
+	golang
 	gulp
 	node
 	npm
