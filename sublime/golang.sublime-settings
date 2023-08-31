@@ -1,3 +1,7 @@
 {
-  "fmt_cmd": ["goimports"]
+  "fmt_cmd": ["goimports"],
+  "env": {
+    "GOPATH": "/Users/pupius/Projects/mono/go/src/",
+    "PATH": "$PATH:/Users/pupius/go/bin"
+  }
 }

@@ -85,7 +85,10 @@
   abort = rebase --abort
 
   # List my local and remote branches (ignoring stderr about bad refs etc.)
-  branches = !git branch -avv --color=always 2>/dev/null | grep dpup
+  #branches = !git branch -avv --color=always 2>/dev/null | grep dpup
+
+  # List branches with last commit.
+  branches = for-each-ref --sort=authordate --format '%(authordate:iso) %(align:left,25)%(refname:short)%(end) %(subject)' refs/heads
 
   # Remove branches that have already been merged.
   #cleanup = !git branch --merged | grep -v main | grep -v '*' | xargs git branch -d

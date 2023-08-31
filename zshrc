@@ -16,7 +16,7 @@ plugins=(
 	gulp
 	node
 	npm
-	osx
+	macos
 	ssh-agent
 	sublime
 	terraform

@@ -13,7 +13,7 @@
 	"ignored_packages":
 	[
 		"GoSublime",
-		"Vintage"
+		"Vintage",
 	],
 	"indent_guide_options":
 	[
@@ -30,5 +30,5 @@
 	],
 	"tab_size": 2,
 	"theme": "Default.sublime-theme",
-	"trim_trailing_white_space_on_save": true
+	"trim_trailing_white_space_on_save": true,
 }
