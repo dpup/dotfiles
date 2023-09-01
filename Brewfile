@@ -1,80 +1,62 @@
-tap "homebrew/core"
 tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/core"
 tap "homebrew/services"
-tap "caskroom/fonts"
-tap "caskroom/cask"
 tap "mas-cli/tap"
-
-# Command line tools.
-brew "awscli"
+brew "ack"
+brew "xz"
+brew "autoconf"
+brew "automake", link: false
+brew "sqlite"
+brew "awscli", link: false
+brew "bash"
 brew "bash-completion"
-brew "dnsmasq"
-brew "docker"
 brew "fontconfig"
-brew "freetype"
-brew "gd"
 brew "gdbm"
+brew "python@3.9"
+brew "certbot"
+brew "direnv"
+brew "dnsmasq"
+brew "docker", link: false
+brew "gd"
+brew "gflags"
 brew "git"
+brew "gnupg", link: false
 brew "go"
+brew "icu4c"
 brew "graphviz"
 brew "hugo"
-brew "icu4c"
-brew "jpeg"
 brew "jq"
-brew "libpng"
-brew "libtiff"
-brew "libtool"
+brew "libxml2"
 brew "mas"
 brew "mysql"
 brew "node"
-brew "oniguruma"
-brew "openssl"
 brew "pgcli"
 brew "protobuf"
-brew "python"
-brew "python@2"
-brew "readline"
-brew "sqlite"
 brew "terraform"
 brew "tkdiff"
-brew "webp"
+brew "tree", link: false
 brew "xmlstarlet"
-brew "xz"
-
-# Casks
-cask_args appdir: "/Applications"
-cask "1password"
-cask "docker"
-cask "dropbox"
-cask "evernote"
-cask "gephi"
-cask "google-chrome"
-cask "google-drive-file-stream"
-cask "iterm2"
-cask "mysqlworkbench"
-cask "omnigraffle"
-cask "pritunl"
-cask "rescuetime"
-cask "slack"
-cask "spotify"
+cask "1password", args: { appdir: "/Applications" }
+cask "gephi", args: { appdir: "/Applications" }
+cask "google-drive"
+cask "omnigraffle", args: { appdir: "/Applications" }
+cask "pritunl", args: { appdir: "/Applications" }
+cask "rar"
+cask "rescuetime", args: { appdir: "/Applications" }
 cask "sublime-text"
-cask "virtualbox"
-cask "zoomus"
-
-# Open-source Fonts
-cask "font-clear-sans"
-cask "font-fira-sans"
-cask "font-inconsolata"
-cask "font-lato"
-cask "font-open-sans"
-cask "font-open-sans-condensed"
-cask "font-pt-mono"
-cask "font-pt-sans"
-cask "font-pt-serif"
-cask "font-roboto"
-cask "font-source-code-pro"
-cask "font-source-sans-pro"
-cask "font-ubuntu"
-
-# Mac App Store
-mas 'Keynote', id: 409183694
+mas "Amphetamine", id: 937984704
+mas "Color Picker", id: 641027709
+mas "DragonDrop", id: 499148234
+mas "Evernote", id: 406056744
+mas "Final Cut Pro", id: 424389933
+mas "GarageBand", id: 682658836
+mas "iMovie", id: 408981434
+mas "iPhoto", id: 408981381
+mas "Issuepost", id: 673907630
+mas "Keynote", id: 409183694
+mas "Kindle", id: 405399194
+mas "LittleIpsum", id: 405772121
+mas "Numbers", id: 409203825
+mas "Pages", id: 409201541
+mas "Pixel Tools", id: 491736717
