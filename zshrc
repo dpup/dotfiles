@@ -1,7 +1,7 @@
-path+=('/usr/local/bin')
-path+=('/usr/local/opt/sqlite/bin')
-path+=('/Users/pupius/Projects/git-workflow')
-path+=('/Users/pupius/bin')
+path+=("/usr/local/bin")
+path+=("/usr/local/opt/sqlite/bin")
+path+=("/Users/$USER/Projects/git-workflow")
+path+=("/Users/$USER/bin")
 export PATH
 
 ZSH_THEME="clean"

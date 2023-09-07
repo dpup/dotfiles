@@ -2,3 +2,4 @@ log.txt
 sublime/GoSublime/
 sublime/Package Control*
 sublime/oscrypto-ca-bundle.crt
+.DS_Store
